@@ -1,0 +1,404 @@
+{
+  "validated_at_utc": "2026-11-06T18:58:11.819847+00:00",
+  "cloud": {
+    "checked_at_utc": "2026-11-06T18:52:24.211491+00:00",
+    "project": "projeto-pim",
+    "runtime_identity": "pim-runtime@projeto-pim.iam.gserviceaccount.com",
+    "run_id": "airflow_9cad1ad84a90c24e377cb2aa",
+    "gold_table": "projeto-pim.pim.pim_transformacao_2025",
+    "gold_rows": 4896,
+    "top3_rows": 612,
+    "matches_local_decimal_reference": true,
+    "gold_business_sha256": "ba9026e23c9e416dc9b0ce6210b24d0a4d46c417ce24c7ba477365ea75201944",
+    "gold_expiration": null,
+    "gold_location": "southamerica-east1",
+    "validation": {
+      "rows_count": 4896,
+      "invalid_rows": 0
+    },
+    "snapshots": {
+      "bronze": {
+        "bucket": "projeto-pim-bronze",
+        "objects": 53,
+        "bytes": 5298138,
+        "generation_sha256": "20e8e97cdede639a6469b38a84da5a054ee917d1f2886e9766531edc23b43891",
+        "manifest_uri": "gs://projeto-pim-bronze/ibge/sidra/tabela=8888/run_id=airflow_9cad1ad84a90c24e377cb2aa/manifest.json",
+        "rows": 914166
+      },
+      "silver": {
+        "bucket": "projeto-pim-silver",
+        "objects": 51,
+        "bytes": 2770153,
+        "generation_sha256": "238415b0fdcf3fc434f1e85a48c4678d55b076e240971553e335d8f14780d112",
+        "manifest_uri": "gs://projeto-pim-silver/ibge/sidra/tabela=8888/run_id=airflow_9cad1ad84a90c24e377cb2aa/manifest.json",
+        "rows": 914166
+      }
+    },
+    "pipeline_result": {
+      "build_job_id": "1b09ecee-df95-4904-86c1-d8782317ecea",
+      "candidate": "projeto-pim.pim.candidate_83b13c13508c2dba",
+      "expected_rows": 36936,
+      "gold_table": "projeto-pim.pim.pim_transformacao_2025",
+      "load_job_id": "cabda43e-a8ef-4875-a4dd-84832ce53776",
+      "publish_job_id": "c55b99d1-8523-4458-99fb-3ef868f484c0",
+      "run_id": "airflow_9cad1ad84a90c24e377cb2aa",
+      "stage": "projeto-pim.pim.staging_83b13c13508c2dba",
+      "status": "complete",
+      "top3_rows": 612,
+      "validation": {
+        "invalid_rows": 0,
+        "rows_count": 4896
+      }
+    },
+    "verification_job_id": "7dabfe90-dad0-4c55-8737-6104cf826351",
+    "verification_bytes_processed": 837348
+  },
+  "manual_run": {
+    "run": {
+      "run_id": "manual__homologacao_20261106",
+      "state": "success",
+      "start_date": "2026-11-06T18:43:11.596246+00:00",
+      "end_date": "2026-11-06T18:51:12.106192+00:00"
+    },
+    "tasks": [
+      {
+        "task_id": "build_validate_gold",
+        "state": "success",
+        "try_number": 1,
+        "start_date": "2026-11-06T18:50:31.27692+00:00",
+        "end_date": "2026-11-06T18:50:49.272715+00:00"
+      },
+      {
+        "task_id": "ingest_bronze",
+        "state": "success",
+        "try_number": 1,
+        "start_date": "2026-11-06T18:44:21.001921+00:00",
+        "end_date": "2026-11-06T18:47:57.439386+00:00"
+      },
+      {
+        "task_id": "load_staging",
+        "state": "success",
+        "try_number": 1,
+        "start_date": "2026-11-06T18:50:16.290644+00:00",
+        "end_date": "2026-11-06T18:50:30.865399+00:00"
+      },
+      {
+        "task_id": "publish_gold",
+        "state": "success",
+        "try_number": 1,
+        "start_date": "2026-11-06T18:50:50.54404+00:00",
+        "end_date": "2026-11-06T18:50:59.584119+00:00"
+      },
+      {
+        "task_id": "record_metrics",
+        "state": "success",
+        "try_number": 1,
+        "start_date": "2026-11-06T18:51:08.517864+00:00",
+        "end_date": "2026-11-06T18:51:11.755803+00:00"
+      },
+      {
+        "task_id": "transform_silver",
+        "state": "success",
+        "try_number": 1,
+        "start_date": "2026-11-06T18:48:02.120067+00:00",
+        "end_date": "2026-11-06T18:50:14.583821+00:00"
+      },
+      {
+        "task_id": "validate_configuration",
+        "state": "success",
+        "try_number": 1,
+        "start_date": "2026-11-06T18:43:12.580571+00:00",
+        "end_date": "2026-11-06T18:44:16.560921+00:00"
+      },
+      {
+        "task_id": "validate_top3",
+        "state": "success",
+        "try_number": 1,
+        "start_date": "2026-11-06T18:50:59.834335+00:00",
+        "end_date": "2026-11-06T18:51:07.469706+00:00"
+      }
+    ],
+    "health": {
+      "metadatabase": {
+        "status": "healthy"
+      },
+      "scheduler": {
+        "status": "healthy",
+        "latest_scheduler_heartbeat": "2026-11-06T18:58:04.891906+00:00"
+      },
+      "triggerer": {
+        "status": null,
+        "latest_triggerer_heartbeat": null
+      },
+      "dag_processor": {
+        "status": "healthy",
+        "latest_dag_processor_heartbeat": "2026-11-06T18:58:08.059314+00:00"
+      }
+    },
+    "containers": [
+      {
+        "Service": "airflow-api",
+        "State": "running",
+        "Health": "healthy",
+        "Image": "pim-airflow:3.1.6"
+      },
+      {
+        "Service": "airflow-dag-processor",
+        "State": "running",
+        "Health": "healthy",
+        "Image": "pim-airflow:3.1.6"
+      },
+      {
+        "Service": "airflow-init",
+        "State": "exited",
+        "Health": "",
+        "Image": "pim-airflow:3.1.6"
+      },
+      {
+        "Service": "airflow-scheduler",
+        "State": "running",
+        "Health": "healthy",
+        "Image": "pim-airflow:3.1.6"
+      },
+      {
+        "Service": "postgres",
+        "State": "running",
+        "Health": "healthy",
+        "Image": "postgres:16.11-bookworm"
+      }
+    ]
+  },
+  "scheduled_run": {
+    "run_id": "scheduled__2026-10-15T12:00:00+00:00",
+    "state": "success",
+    "start_date": "2026-11-06T18:51:17.404509+00:00",
+    "end_date": "2026-11-06T18:55:28.701628+00:00"
+  },
+  "idempotency": {
+    "same_gold_business_sha256": true,
+    "same_bronze_and_silver_generations": true,
+    "gold_rows": 4896,
+    "top3_rows": 612,
+    "first_publish_job_id": "27bbaa5b-12a0-4e3a-8c8f-1184cb5c76d8",
+    "repeat_publish_job_id": "6f1c075d-ad99-4f4c-a535-318d94643f37",
+    "receipts_preserved": true
+  },
+  "airflow_reexecution": {
+    "manual_and_scheduled_runs_succeeded": true,
+    "same_gold_business_sha256": true,
+    "gold_rows": 4896,
+    "top3_rows": 612,
+    "manual_snapshot": "airflow_9cad1ad84a90c24e377cb2aa",
+    "scheduled_snapshot": "airflow_613aa0e3bac5fa1617f06dec",
+    "next_scheduled_run_utc": "2026-11-15T12:00:00+00:00",
+    "timezone": "America/Fortaleza",
+    "cron": "0 9 15 * *"
+  },
+  "metadata_persistence": {
+    "metadata_preserved_after_postgres_restart": true,
+    "run_id": "manual__homologacao_20261106",
+    "successful_tasks": 8,
+    "metadata_sha256": "1227b7c5b7939d7f804eb3869d6e83aa8320b48c6431712e66d29208137772e6"
+  },
+  "project_validation": {
+    "checked_at_utc": "2026-11-08T20:01:04.906515+00:00",
+    "pytest_passed": 75,
+    "docker_build": "passed",
+    "dag_import_tasks": 8,
+    "dependency_check": "passed",
+    "docker_services": "healthy",
+    "container_image": "pim-airflow:3.1.6"
+  },
+  "governance": {
+    "checked_at_utc": "2026-11-07T19:47:51.815806+00:00",
+    "renamed_tables": [
+      {
+        "old": "candidate_26dd954f082d9d28",
+        "new": "val_pim_transformacao_2025_26dd954f082d9d28",
+        "rows": 4896,
+        "expires": "2026-11-08 18:54:42.136000+00:00",
+        "columns_described": 11,
+        "rename_job_id": "47b25157-da0d-47bc-a9cb-3ffcb0f1e9d1"
+      },
+      {
+        "old": "candidate_6eefc50af39a0470",
+        "new": "val_pim_transformacao_2025_6eefc50af39a0470",
+        "rows": 4896,
+        "expires": "2026-11-08 18:24:29.582000+00:00",
+        "columns_described": 11,
+        "rename_job_id": "b97bc967-344e-4468-a4b0-1ac663f97a57"
+      },
+      {
+        "old": "candidate_83b13c13508c2dba",
+        "new": "val_pim_transformacao_2025_83b13c13508c2dba",
+        "rows": 4896,
+        "expires": "2026-11-08 18:50:28.372000+00:00",
+        "columns_described": 11,
+        "rename_job_id": "4f8dc2cb-3071-4a6b-bea2-c79f88ee4139"
+      },
+      {
+        "old": "staging_26dd954f082d9d28",
+        "new": "stg_pim_sidra_2025_26dd954f082d9d28",
+        "rows": 36936,
+        "expires": "2026-11-08 18:54:40.940000+00:00",
+        "columns_described": 21,
+        "rename_job_id": "76ea2fba-8f52-42b7-a49e-86076168f804"
+      },
+      {
+        "old": "staging_6eefc50af39a0470",
+        "new": "stg_pim_sidra_2025_6eefc50af39a0470",
+        "rows": 36936,
+        "expires": "2026-11-08 18:24:27.111000+00:00",
+        "columns_described": 21,
+        "rename_job_id": "b8e2635a-5cdb-438b-8882-99cf1d592943"
+      },
+      {
+        "old": "staging_83b13c13508c2dba",
+        "new": "stg_pim_sidra_2025_83b13c13508c2dba",
+        "rows": 36936,
+        "expires": "2026-11-08 18:50:26.806000+00:00",
+        "columns_described": 21,
+        "rename_job_id": "ac76766f-8109-40e1-9cb5-8a24156f1678"
+      }
+    ],
+    "gold_table": "projeto-pim.pim.pim_transformacao_2025",
+    "gold_columns_described": 11,
+    "gold_rows_unchanged": 4896,
+    "gold_content_sha256": "e82d25d64715fa0b0bc1285ab1de8e9ce3899c6ad0269b3c3059fea0dcb4ca36",
+    "gold_data_unchanged": true,
+    "dictionary_versioned_in": "src/pim_pipeline/loading.py",
+    "schema_descriptions_survive_republication": true,
+    "publication_ddl_dry_run_passed": true,
+    "publish_job_ids": [
+      "8f6588c0-d6c9-45ed-a75f-24f88fff7c9c",
+      "4e16db28-6f2a-4ce0-903a-063971d938c1"
+    ],
+    "tables": [
+      {
+        "name": "pim_transformacao_2025",
+        "rows": 4896,
+        "columns": 11,
+        "described_columns": 11,
+        "description": "Análise PIM-PF Regional 2025 (IBGE/SIDRA 8888, variável 12606). Uma linha por UF/mês/atividade de transformação, com índice, média simples dos índices disponíveis e diferença em pontos de índice. Chave: uf_codigo, mes_referencia, atividade_codigo. Dados públicos; sem expiração temporária.",
+        "labels": {
+          "camada": "gold",
+          "fonte": "ibge_sidra",
+          "ano_referencia": "2025",
+          "classificacao": "publico"
+        },
+        "expires": null
+      },
+      {
+        "name": "stg_pim_sidra_2025_26dd954f082d9d28",
+        "rows": 36936,
+        "columns": 21,
+        "described_columns": 21,
+        "description": "Carga auxiliar dos dados Silver da SIDRA 8888 referentes a 2025, com todos os indicadores e níveis territoriais. Expira em dois dias; uso interno do pipeline. Coleta de origem (run_id): airflow_613aa0e3bac5fa1617f06dec.",
+        "labels": {
+          "camada": "staging",
+          "fonte": "ibge_sidra",
+          "ano_referencia": "2025",
+          "classificacao": "publico"
+        },
+        "expires": "2026-11-08 18:54:40.940000+00:00"
+      },
+      {
+        "name": "stg_pim_sidra_2025_6eefc50af39a0470",
+        "rows": 36936,
+        "columns": 21,
+        "described_columns": 21,
+        "description": "Carga auxiliar dos dados Silver da SIDRA 8888 referentes a 2025, com todos os indicadores e níveis territoriais. Expira em dois dias; uso interno do pipeline. Coleta de origem (run_id): homologacao_cloud_20261106.",
+        "labels": {
+          "camada": "staging",
+          "fonte": "ibge_sidra",
+          "ano_referencia": "2025",
+          "classificacao": "publico"
+        },
+        "expires": "2026-11-08 18:24:27.111000+00:00"
+      },
+      {
+        "name": "stg_pim_sidra_2025_83b13c13508c2dba",
+        "rows": 36936,
+        "columns": 21,
+        "described_columns": 21,
+        "description": "Carga auxiliar dos dados Silver da SIDRA 8888 referentes a 2025, com todos os indicadores e níveis territoriais. Expira em dois dias; uso interno do pipeline. Coleta de origem (run_id): airflow_9cad1ad84a90c24e377cb2aa.",
+        "labels": {
+          "camada": "staging",
+          "fonte": "ibge_sidra",
+          "ano_referencia": "2025",
+          "classificacao": "publico"
+        },
+        "expires": "2026-11-08 18:50:26.806000+00:00"
+      },
+      {
+        "name": "val_pim_transformacao_2025_26dd954f082d9d28",
+        "rows": 4896,
+        "columns": 11,
+        "described_columns": 11,
+        "description": "Candidata da análise PIM 2025: uma linha por UF, mês e atividade de transformação. Validada antes da publicação; expira em dois dias e não é a tabela de consumo. Coleta de origem (run_id): airflow_613aa0e3bac5fa1617f06dec.",
+        "labels": {
+          "camada": "validacao",
+          "fonte": "ibge_sidra",
+          "ano_referencia": "2025",
+          "classificacao": "publico"
+        },
+        "expires": "2026-11-08 18:54:42.136000+00:00"
+      },
+      {
+        "name": "val_pim_transformacao_2025_6eefc50af39a0470",
+        "rows": 4896,
+        "columns": 11,
+        "described_columns": 11,
+        "description": "Candidata da análise PIM 2025: uma linha por UF, mês e atividade de transformação. Validada antes da publicação; expira em dois dias e não é a tabela de consumo. Coleta de origem (run_id): homologacao_cloud_20261106.",
+        "labels": {
+          "camada": "validacao",
+          "fonte": "ibge_sidra",
+          "ano_referencia": "2025",
+          "classificacao": "publico"
+        },
+        "expires": "2026-11-08 18:24:29.582000+00:00"
+      },
+      {
+        "name": "val_pim_transformacao_2025_83b13c13508c2dba",
+        "rows": 4896,
+        "columns": 11,
+        "described_columns": 11,
+        "description": "Candidata da análise PIM 2025: uma linha por UF, mês e atividade de transformação. Validada antes da publicação; expira em dois dias e não é a tabela de consumo. Coleta de origem (run_id): airflow_9cad1ad84a90c24e377cb2aa.",
+        "labels": {
+          "camada": "validacao",
+          "fonte": "ibge_sidra",
+          "ano_referencia": "2025",
+          "classificacao": "publico"
+        },
+        "expires": "2026-11-08 18:50:28.372000+00:00"
+      }
+    ],
+    "total_tables": 7,
+    "total_described_columns": 107,
+    "gold_full_content_sha256": "e82d25d64715fa0b0bc1285ab1de8e9ce3899c6ad0269b3c3059fea0dcb4ca36",
+    "top3_rows": 612,
+    "retention": {
+      "checked_at_utc": "2026-11-07T20:13:18.001513+00:00",
+      "policy": "current_and_previous_successful_execution",
+      "current": "26dd954f082d9d28",
+      "previous": "83b13c13508c2dba",
+      "removed_tables": [
+        "stg_pim_sidra_2025_6eefc50af39a0470",
+        "val_pim_transformacao_2025_6eefc50af39a0470"
+      ],
+      "remaining_tables": [
+        "pim_transformacao_2025",
+        "stg_pim_sidra_2025_26dd954f082d9d28",
+        "stg_pim_sidra_2025_83b13c13508c2dba",
+        "val_pim_transformacao_2025_26dd954f082d9d28",
+        "val_pim_transformacao_2025_83b13c13508c2dba"
+      ],
+      "retained_tables_without_time_expiration": true,
+      "repeat_cleanup_removed_nothing": true,
+      "gold_data_unchanged": true,
+      "gold_rows": 4896,
+      "top3_rows": 612,
+      "publish_job_id": "651a9620-a403-40c7-98af-b426bb505629"
+    }
+  }
+}

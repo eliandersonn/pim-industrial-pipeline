@@ -1,0 +1,26 @@
+# Versoes compativeis com as constraints do Airflow 3.1.6.
+certifi==2026.1.4
+charset-normalizer==3.4.4
+google-api-core==2.28.1
+google-auth==2.47.0
+google-cloud-bigquery==3.39.0
+google-cloud-core==2.5.0
+google-cloud-storage==3.7.0
+google-crc32c==1.8.0
+google-resumable-media==2.8.0
+googleapis-common-protos==1.72.0
+grpcio==1.65.5
+grpcio-status==1.62.3
+idna==3.11
+packaging==25.0
+proto-plus==1.27.0
+protobuf==4.25.8
+pyarrow==18.1.0
+pyasn1==0.6.1
+pyasn1-modules==0.4.2
+python-dateutil==2.9.0.post0
+requests==2.32.5
+rsa==4.9.1
+six==1.17.0
+tzdata==2025.3
+urllib3==2.6.3
